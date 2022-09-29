@@ -2,7 +2,7 @@ FROM ze-pharaon237/pharaon-bot:latest
 
 WORKDIR /
 
-COPY ./pharaon-bot
+COPY . /pharaon-bot
 
 WORKDIR /pharaon-bot
 
