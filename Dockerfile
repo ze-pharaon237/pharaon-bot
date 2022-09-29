@@ -1,4 +1,4 @@
-FROM Ze-pharaon237/pharaon-bot:latest
+FROM ze-pharaon237/pharaon-bot:latest
 
 WORKDIR /
 
