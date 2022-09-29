@@ -2,13 +2,13 @@ FROM ze-pharaon237/pharaon-bot:latest
 
 WORKDIR /
 
-COPY . /pharaon-bot
+COPY ./pharaon-bot
 
 WORKDIR /pharaon-bot
 
 RUN git init --initial-branch=main
 
-RUN git remote add origin https://github.com/Ze-pharaon237/pharaon-bot.git
+RUN git remote add origin https://github.com/ze-pharaon237/pharaon-bot.git
 
 RUN git fetch origin main
 
