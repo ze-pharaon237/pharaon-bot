@@ -1,18 +1,18 @@
-FROM ze-pharaon237/pharaon-bot:latest
+FROM princemendiratta/botsapp:latest
 
 WORKDIR /
 
-COPY . /pharaon-bot
+COPY . /BotsApp
 
-WORKDIR /pharaon-bot
+WORKDIR /BotsApp
 
-RUN git init --initial-branch=main
+RUN git init --initial-branch=multi-device
 
-RUN git remote add origin https://github.com/ze-pharaon237/pharaon-bot.git
+RUN git remote add origin https://github.com/BotsAppOfficial/BotsApp.git
 
-RUN git fetch origin main
+RUN git fetch origin multi-device
 
-RUN git reset --hard origin/main
+RUN git reset --hard origin/multi-device
 
 RUN yarn
 
