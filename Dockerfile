@@ -1,21 +1,13 @@
-FROM princemendiratta/botsapp:latest
+FROM node:lts-buster
 
-WORKDIR /
+RUN apt-get update
 
-COPY . /BotsApp
+RUN npm install
 
-WORKDIR /BotsApp
+RUN rm -rf node_modules
 
-RUN git init --initial-branch=multi-device
+RUN rm -rf session.data.json
 
-RUN git remote add origin https://github.com/BotsAppOfficial/BotsApp.git
+RUN rm -rf BotsApp.db
 
-RUN git fetch origin multi-device
-
-RUN git reset --hard origin/multi-device
-
-RUN yarn
-
-# RUN cp -r /root/Baileys/lib /BotsApp/node_modules/@adiwajshing/baileys/
-
-CMD [ "npm", "start"]
+CMD ["npm", "start"]
