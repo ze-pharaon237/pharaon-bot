@@ -13,6 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const db_1 = __importDefault(require("../lib/db"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const string_format_1 = __importDefault(require("string-format"));
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const config_1 = __importDefault(require("../config"));
@@ -23,6 +24,7 @@ module.exports = {
     description: HELP.DESCRIPTION,
     extendedDescription: HELP.EXTENDED_DESCRIPTION,
     demo: { isEnabled: false },
+    category: moduleCategory_1.ModuleCategory.bot,
     handle(client, chat, BotsApp, args, commandHandler) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
@@ -32,9 +34,22 @@ module.exports = {
                 let helpMessage;
                 if (!args[0]) {
                     helpMessage = HELP.HEAD;
+                    /*
+                    helpMessage += "\n╭─❒ 「 Standard Menu 」\n";
                     commandHandler.forEach(element => {
-                        helpMessage += (0, string_format_1.default)(HELP.TEMPLATE, prefixes[0] + element.name, element.description);
+                        helpMessage += format(HELP.TEMPLATE, prefixes[0] + element.name);
                     });
+                    helpMessage += "╰─❒ \n";
+                    */
+                    for (const category in moduleCategory_1.ModuleCategory) {
+                        helpMessage += "\n╭─❒ 「 *" + category + "* Menu 」\n";
+                        commandHandler.forEach(element => {
+                            if (element.category == category) {
+                                helpMessage += (0, string_format_1.default)(HELP.TEMPLATE, prefixes[0] + element.name);
+                            }
+                        });
+                        helpMessage += "╰─❒ \n";
+                    }
                     client.sendMessage(BotsApp.chatId, helpMessage, message_type_1.MessageType.text).catch(err => input_sanitization_1.default.handleError(err, client, BotsApp));
                     return;
                 }

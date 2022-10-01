@@ -1,5 +1,6 @@
 import inputSanitization from "../sidekick/input-sanitization";
 import String from "../lib/db.js";
+import { ModuleCategory as Cat } from "../lib/moduleCategory";
 import Client from "../sidekick/client";
 import { proto } from "@adiwajshing/baileys";
 import BotsApp from "../sidekick/sidekick";
@@ -10,6 +11,7 @@ module.exports = {
     name: "demote",
     description: REPLY.DESCRIPTION,
     extendedDescription: REPLY.EXTENDED_DESCRIPTION,
+    category: Cat.group ,
     async handle(client: Client, chat: proto.IWebMessageInfo, BotsApp: BotsApp, args: string[]): Promise<void> {
         try {
             if (!BotsApp.isGroup) {

@@ -1,5 +1,6 @@
 import inputSanitization from "../sidekick/input-sanitization";
 import STRINGS from "../lib/db.js";
+import { ModuleCategory as Cat } from "../lib/moduleCategory";
 import Client from "../sidekick/client.js";
 import BotsApp from "../sidekick/sidekick";
 import { MessageType } from "../sidekick/message-type";
@@ -9,6 +10,7 @@ module.exports = {
     name: "tagall",
     description: STRINGS.tagall.DESCRIPTION,
     extendedDescription: STRINGS.tagall.EXTENDED_DESCRIPTION,
+    category: Cat.group ,
     demo: {
         isEnabled: true,
         text: [

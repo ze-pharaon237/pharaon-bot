@@ -15,18 +15,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const google_translate_api_1 = __importDefault(require("@vitalets/google-translate-api"));
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const db_1 = __importDefault(require("../lib/db"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const string_format_1 = __importDefault(require("string-format"));
 const message_type_1 = require("../sidekick/message-type");
 module.exports = {
     name: "tr",
     description: db_1.default.tr.DESCRIPTION,
     extendedDescription: db_1.default.tr.EXTENDED_DESCRIPTION,
+    category: moduleCategory_1.ModuleCategory.convert,
     demo: {
         isEnabled: true,
         text: [
             ".tr やめてください",
-            ".tr how are you | hindi",
-            ".tr how are you | hi",
+            ".tr how are you | french",
+            ".tr how are you | fr",
         ],
     },
     handle(client, chat, BotsApp, args) {

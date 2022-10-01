@@ -30,7 +30,7 @@ class Client {
             }
             else if (type === message_type_1.MessageType.sticker) {
                 res = yield this.sock.sendMessage(jid, {
-                    sticker: new Buffer(content)
+                    sticker: Buffer.from(content)
                 });
             }
             else if (type === message_type_1.MessageType.audio) {

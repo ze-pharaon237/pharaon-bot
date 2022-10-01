@@ -16,6 +16,7 @@ const fs_1 = __importDefault(require("fs"));
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const message_type_1 = require("../sidekick/message-type");
 const db_1 = __importDefault(require("../lib/db"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const baileys_1 = require("@adiwajshing/baileys");
 const STICKER = db_1.default.sticker;
 module.exports = {
@@ -23,6 +24,7 @@ module.exports = {
     description: STICKER.DESCRIPTION,
     extendedDescription: STICKER.EXTENDED_DESCRIPTION,
     demo: { isEnabled: false },
+    category: moduleCategory_1.ModuleCategory.convert,
     handle(client, chat, BotsApp, args) {
         return __awaiter(this, void 0, void 0, function* () {
             // Task starts here

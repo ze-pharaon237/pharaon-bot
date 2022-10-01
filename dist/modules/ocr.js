@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const ocr_space_api_wrapper_1 = __importDefault(require("ocr-space-api-wrapper"));
 const db_js_1 = __importDefault(require("../lib/db.js"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const config_1 = __importDefault(require("../config"));
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const baileys_1 = require("@adiwajshing/baileys");
@@ -23,6 +24,7 @@ module.exports = {
     name: "ocr",
     description: OCR.DESCRIPTION,
     extendedDescription: OCR.EXTENDED_DESCRIPTION,
+    category: moduleCategory_1.ModuleCategory.convert,
     handle(client, chat, BotsApp, args) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

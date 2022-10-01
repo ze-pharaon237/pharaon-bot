@@ -49,7 +49,7 @@ const getCleanedContact = (args, client, BotsApp) => __awaiter(void 0, void 0, v
         client.sendMessage(BotsApp.chatId, "*Enter valid contact number.* Approved Syntax:\n```1. XXXXXXXXXX``` \n```2. Tag the person``` \n```3. +(YYY)XXXXXXXXXX.``` \n_(YY- Country Code, without zeros)_", message_type_1.MessageType.text);
         return undefined;
     }
-    else if (jidNumber.length === 10) {
+    else if (jidNumber.length === 9 || jidNumber.length === 8) {
         jidNumber = countryCode + jidNumber;
     }
     console.log(jidNumber);

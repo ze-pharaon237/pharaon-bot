@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const db_1 = __importDefault(require("../lib/db"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const string_format_1 = __importDefault(require("string-format"));
 const message_type_1 = require("../sidekick/message-type");
 const urban_dictionary_1 = __importDefault(require("urban-dictionary"));
@@ -21,6 +22,7 @@ module.exports = {
     name: "ud",
     description: db_1.default.ud.DESCRIPTION,
     extendedDescription: db_1.default.ud.EXTENDED_DESCRIPTION,
+    category: moduleCategory_1.ModuleCategory.search,
     demo: { isEnabled: true, text: ".ud bruh" },
     handle(client, chat, BotsApp, args) {
         return __awaiter(this, void 0, void 0, function* () {

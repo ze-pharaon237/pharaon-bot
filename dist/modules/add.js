@@ -13,6 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const db_js_1 = __importDefault(require("../lib/db.js"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const config_1 = __importDefault(require("../config"));
 const message_type_1 = require("../sidekick/message-type");
@@ -22,6 +23,7 @@ module.exports = {
     name: "add",
     description: ADD.DESCRIPTION,
     extendedDescription: ADD.EXTENDED_DESCRIPTION,
+    category: moduleCategory_1.ModuleCategory.group,
     demo: { isEnabled: false },
     handle(client, chat, BotsApp, args) {
         return __awaiter(this, void 0, void 0, function* () {

@@ -3,6 +3,7 @@ import fs from "fs";
 import inputSanitization from "../sidekick/input-sanitization";
 import { MessageType } from "../sidekick/message-type";
 import Strings from "../lib/db";
+import { ModuleCategory as Cat } from "../lib/moduleCategory";
 import Client from "../sidekick/client";
 import { downloadContentFromMessage, proto } from "@adiwajshing/baileys";
 import BotsApp from "../sidekick/sidekick";
@@ -15,6 +16,7 @@ export = {
     description: STICKER.DESCRIPTION,
     extendedDescription: STICKER.EXTENDED_DESCRIPTION,
     demo: { isEnabled: false },
+    category: Cat.convert ,
     async handle(client: Client, chat: proto.IWebMessageInfo, BotsApp: BotsApp, args: string[]): Promise<void> {
         // Task starts here
         try {

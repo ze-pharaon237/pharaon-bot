@@ -13,12 +13,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const db_js_1 = __importDefault(require("../lib/db.js"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const message_type_1 = require("../sidekick/message-type");
 module.exports = {
     name: "disappear",
     description: db_js_1.default.disappear.DESCRIPTION,
     extendedDescription: db_js_1.default.disappear.EXTENDED_DESCRIPTION,
+    category: moduleCategory_1.ModuleCategory.group,
     demo: { isEnabled: true, text: [".disappear", ".disappear off"] },
     handle(client, chat, BotsApp, args) {
         return __awaiter(this, void 0, void 0, function* () {

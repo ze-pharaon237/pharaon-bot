@@ -1,5 +1,6 @@
 import chalk from "chalk";
 import STRINGS from "../lib/db.js";
+import { ModuleCategory as Cat } from "../lib/moduleCategory";
 import inputSanitization from "../sidekick/input-sanitization";
 import CONFIG from "../config";
 import Client from "../sidekick/client";
@@ -14,6 +15,7 @@ module.exports = {
     name: "add",
     description: ADD.DESCRIPTION,
     extendedDescription: ADD.EXTENDED_DESCRIPTION,
+    category: Cat.group ,
     demo: { isEnabled: false },
     async handle(client: Client, chat: proto.IWebMessageInfo, BotsApp: BotsApp, args: string[]): Promise<void> {
         try {

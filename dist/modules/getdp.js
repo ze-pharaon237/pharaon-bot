@@ -15,12 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const fs_1 = __importDefault(require("fs"));
 const db_1 = __importDefault(require("../lib/db"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const message_type_1 = require("../sidekick/message-type");
 const GETDP = db_1.default.getdp;
 module.exports = {
     name: "getdp",
     description: GETDP.DESCRIPTION,
     extendedDescription: GETDP.EXTENDED_DESCRIPTION,
+    category: moduleCategory_1.ModuleCategory.group,
     demo: { isEnabled: true, text: ".getdp" },
     handle(client, chat, BotsApp, args) {
         return __awaiter(this, void 0, void 0, function* () {

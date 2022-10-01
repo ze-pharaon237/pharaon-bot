@@ -1,4 +1,5 @@
 import Strings from "../lib/db";
+import { ModuleCategory as Cat } from "../lib/moduleCategory";
 import Client from "../sidekick/client";
 import { proto } from "@adiwajshing/baileys";
 import BotsApp from "../sidekick/sidekick";
@@ -10,6 +11,7 @@ module.exports = {
     name: "block",
     description: Reply.DESCRIPTION,
     extendedDescription: Reply.EXTENDED_DESCRIPTION,
+    category: Cat.bot ,
     async handle(client: Client, chat: proto.IWebMessageInfo, BotsApp: BotsApp, args: string[]): Promise<void> {
         try {
             const reply: proto.Message.IExtendedTextMessage = chat.message.extendedTextMessage;

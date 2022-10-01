@@ -15,13 +15,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const yt_search_1 = __importDefault(require("yt-search"));
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const db_1 = __importDefault(require("../lib/db"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const message_type_1 = require("../sidekick/message-type");
 const YT = db_1.default.yt;
 module.exports = {
     name: "yt",
     description: YT.DESCRIPTION,
     extendedDescription: YT.EXTENDED_DESCRIPTION,
-    demo: { isEnabled: true, text: ".yt BotsApp Deployment Tutorial" },
+    category: moduleCategory_1.ModuleCategory.search,
+    demo: { isEnabled: true, text: ".yt dark night angel" },
     handle(client, chat, BotsApp, args) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

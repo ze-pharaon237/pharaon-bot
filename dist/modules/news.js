@@ -13,6 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const db_js_1 = __importDefault(require("../lib/db.js"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const message_type_1 = require("../sidekick/message-type");
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const axios_1 = __importDefault(require("axios"));
@@ -22,6 +23,7 @@ module.exports = {
     name: "news",
     description: NEWS.DESCRIPTION,
     extendedDescription: NEWS.EXTENDED_DESCRIPTION,
+    category: moduleCategory_1.ModuleCategory.search,
     demo: {
         isEnabled: true,
         text: [

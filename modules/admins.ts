@@ -1,4 +1,5 @@
 import Strings from "../lib/db";
+import { ModuleCategory as Cat } from "../lib/moduleCategory";
 const ADMINS = Strings.admins;
 import inputSanitization from "../sidekick/input-sanitization";
 import Client from "../sidekick/client.js";
@@ -11,6 +12,7 @@ module.exports = {
     description: ADMINS.DESCRIPTION,
     extendedDescription: ADMINS.EXTENDED_DESCRIPTION,
     demo: { text: ".admins", isEnabled: true },
+    category: Cat.group ,
     async handle(client: Client, chat: proto.IWebMessageInfo, BotsApp: BotsApp, args: string[]): Promise<void> {
         try {
             if (!BotsApp.isGroup) {

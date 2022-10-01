@@ -58,6 +58,10 @@ const data = {
         ALIVE_MSG:
             "```🃏️ PharaonBot has been integrated successfully. 🎭️\n\nUse the ```  *.help*  ``` command to get a list of plugins that will make your WhatsApp experience much easier.\n\nIf you are impressed with my service, consider supporting the Bot on GitHub-\n```https://github.com/Ze-pharaon237/pharaon-bot\n\n```Check out our official website for any new updates.```",
     },
+    av : {
+        DESCRIPTION: "Ask 'action ou verité'",
+        EXTENDED_DESCRIPTION: "``Show 'action ou verité' message by typing .av```",
+    },
     block: {
         DESCRIPTION: "Block contact",
         EXTENDED_DESCRIPTION:
@@ -149,8 +153,8 @@ const data = {
         DESCRIPTION: "Get the command list and info on modules",
         EXTENDED_DESCRIPTION:
             "This module is used to get info on other modules and their triggers.",
-        HEAD: "🃏️ *PharaonBot Menu* 🎭️\n```Use .help command for detailed info on a module.```",
-        TEMPLATE: "\n\n♟️ *Command* - ```{}```\n💡 *Info* - ```{}```",
+        HEAD: "\n🃏️ *PharaonBot Menu* 🎭️\n```Use .help command for detailed info on a module.```\n",
+        TEMPLATE: "│○ ```{}```\n",
         COMMAND_INTERFACE: "🃏️ *PharaonBot Command Interface* 🎭️\n\n",
         COMMAND_INTERFACE_TEMPLATE: "💠 *Triggers -* ```{}```\n📚 *Info -* {}",
         FOOTER:
@@ -161,6 +165,10 @@ const data = {
         EXTENDED_DESCRIPTION:
             "```Use this module to send a group invite link in the group or personally to someone.```",
         LINK_SENT: "```Invite link sent in DM, please check.```",
+    },
+    love : {
+      DESCRIPTION: "Module to find love% of 2 members",
+      EXTENDED_DESCRIPTION: "Use this module to find the love lvl of two members by use : love [member1] [member2]",
     },
     lyrics: {
         DESCRIPTION: "Module to find lyrics of song",

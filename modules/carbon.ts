@@ -1,5 +1,6 @@
 import chalk from "chalk";
 import String from "../lib/db.js";
+import { ModuleCategory as Cat } from "../lib/moduleCategory";
 import * as Carbon from "unofficial-carbon-now";
 import inputSanitization from "../sidekick/input-sanitization";
 import format from "string-format";
@@ -14,6 +15,7 @@ module.exports = {
     name: "carbon",
     description: CARBON.DESCRIPTION,
     extendedDescription: CARBON.EXTENDED_DESCRIPTION,
+    category: Cat.convert ,
     demo: {
         isEnabled: true,
         text: [

@@ -16,6 +16,7 @@ const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitiza
 const https_1 = __importDefault(require("https"));
 const config_1 = __importDefault(require("../config"));
 const db_1 = __importDefault(require("../lib/db"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const message_type_1 = require("../sidekick/message-type");
 const string_format_1 = __importDefault(require("string-format"));
 const WEATHER = db_1.default.weather;
@@ -24,6 +25,7 @@ module.exports = {
     name: "weather",
     description: WEATHER.DESCRIPTION,
     extendedDescription: WEATHER.EXTENDED_DESCRIPTION,
+    category: moduleCategory_1.ModuleCategory.search,
     demo: {
         isEnabled: true,
         text: [

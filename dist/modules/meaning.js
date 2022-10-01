@@ -13,6 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const db_1 = __importDefault(require("../lib/db"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const google_dictionary_api_1 = __importDefault(require("google-dictionary-api"));
 const string_format_1 = __importDefault(require("string-format"));
@@ -23,6 +24,7 @@ module.exports = {
     description: MEANING.DESCRIPTION,
     extendedDescription: MEANING.EXTENDED_DESCRIPTION,
     demo: { isEnabled: true, text: ".meaning meaning" },
+    category: moduleCategory_1.ModuleCategory.search,
     handle(client, chat, BotsApp, args) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

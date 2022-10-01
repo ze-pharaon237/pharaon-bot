@@ -1,6 +1,7 @@
 import got from "got";
 import inputSanitization from "../sidekick/input-sanitization";
 import STRINGS from "../lib/db";
+import { ModuleCategory as Cat } from "../lib/moduleCategory";
 import format from "string-format";
 import Client from "../sidekick/client";
 import { proto } from "@adiwajshing/baileys";
@@ -12,6 +13,7 @@ module.exports = {
     name: "ud",
     description: STRINGS.ud.DESCRIPTION,
     extendedDescription: STRINGS.ud.EXTENDED_DESCRIPTION,
+    category: Cat.search ,
     demo: { isEnabled: true, text: ".ud bruh" },
     async handle(client: Client, chat: proto.IWebMessageInfo, BotsApp: BotsApp, args: string[]): Promise<void> {
         const processing = await client.sendMessage(

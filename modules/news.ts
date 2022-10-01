@@ -1,4 +1,5 @@
 import STRINGS from "../lib/db.js";
+import { ModuleCategory as Cat } from "../lib/moduleCategory";
 import Client from "../sidekick/client";
 import { proto } from "@adiwajshing/baileys";
 import BotsApp from "../sidekick/sidekick";
@@ -12,6 +13,7 @@ module.exports = {
     name: "news",
     description: NEWS.DESCRIPTION,
     extendedDescription: NEWS.EXTENDED_DESCRIPTION,
+    category: Cat.search ,
     demo: {
         isEnabled: true,
         text: [

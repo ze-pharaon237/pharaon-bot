@@ -14,13 +14,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const db_1 = __importDefault(require("../lib/db"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const got_1 = __importDefault(require("got"));
 const message_type_1 = require("../sidekick/message-type");
 module.exports = {
     name: "github",
     description: db_1.default.github.DESCRIPTION,
     extendedDescription: db_1.default.github.EXTENDED_DESCRIPTION,
-    demo: { isEnabled: true, text: ".github Prince-Mendiratta" },
+    category: moduleCategory_1.ModuleCategory.search,
+    demo: { isEnabled: true, text: ".github ze-pharaon237" },
     handle(client, chat, BotsApp, args) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

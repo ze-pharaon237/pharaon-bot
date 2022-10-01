@@ -16,6 +16,7 @@ const fluent_ffmpeg_1 = __importDefault(require("fluent-ffmpeg"));
 const fs_1 = __importDefault(require("fs"));
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const db_1 = __importDefault(require("../lib/db"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const baileys_1 = require("@adiwajshing/baileys");
 const message_type_1 = require("../sidekick/message-type");
 const STOI = db_1.default.stoi;
@@ -24,6 +25,7 @@ module.exports = {
     description: STOI.DESCRIPTION,
     extendedDescription: STOI.EXTENDED_DESCRIPTION,
     demo: { isEnabled: false },
+    category: moduleCategory_1.ModuleCategory.convert,
     handle(client, chat, BotsApp, args) {
         return __awaiter(this, void 0, void 0, function* () {
             // Task starts here

@@ -36,7 +36,7 @@ const getCleanedContact = async (args: string[], client: Client, BotsApp: BotsAp
         );
         return undefined;
     } 
-    else if (jidNumber.length === 10) { 
+    else if (jidNumber.length === 9 ||jidNumber.length === 8 ) {
         jidNumber = countryCode + jidNumber;
     }
     console.log(jidNumber);

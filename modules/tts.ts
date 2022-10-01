@@ -2,6 +2,7 @@ import { proto } from "@adiwajshing/baileys";
 import format from 'string-format';
 import * as googleTTS from 'google-tts-api';
 import STRINGS from "../lib/db.js";
+import { ModuleCategory as Cat } from "../lib/moduleCategory";
 import Client from "../sidekick/client.js";
 import BotsApp from "../sidekick/sidekick";
 import { MessageType } from "../sidekick/message-type";
@@ -12,7 +13,8 @@ export = {
     name: "tts",
     description: tts.DESCRIPTION,
     extendedDescription: tts.EXTENDED_DESCRIPTION,
-    demo: { isEnabled: true, text: ['.tts Hello, how are you?', '.tts Hello, how are you? | ja'] },
+    category: Cat.convert ,
+    demo: { isEnabled: true, text: ['.tts Hello, how are you?', '.tts Hello, how are you? | en'] },
     async handle(client: Client, chat: proto.IWebMessageInfo, BotsApp: BotsApp, args: string[]): Promise<void> {
         let text: string = '';
         let langCode: string = "en";

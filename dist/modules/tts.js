@@ -37,13 +37,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 const string_format_1 = __importDefault(require("string-format"));
 const googleTTS = __importStar(require("google-tts-api"));
 const db_js_1 = __importDefault(require("../lib/db.js"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const message_type_1 = require("../sidekick/message-type");
 const tts = db_js_1.default.tts;
 module.exports = {
     name: "tts",
     description: tts.DESCRIPTION,
     extendedDescription: tts.EXTENDED_DESCRIPTION,
-    demo: { isEnabled: true, text: ['.tts Hello, how are you?', '.tts Hello, how are you? | ja'] },
+    category: moduleCategory_1.ModuleCategory.convert,
+    demo: { isEnabled: true, text: ['.tts Hello, how are you?', '.tts Hello, how are you? | en'] },
     handle(client, chat, BotsApp, args) {
         return __awaiter(this, void 0, void 0, function* () {
             let text = '';

@@ -15,12 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const message_type_1 = require("../sidekick/message-type");
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const db_1 = __importDefault(require("../lib/db"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const Reply = db_1.default.unblock;
 module.exports = {
     name: "unblock",
     description: Reply.DESCRIPTION,
     extendedDescription: Reply.EXTENDED_DESCRIPTION,
     demo: { isEnabled: false },
+    category: moduleCategory_1.ModuleCategory.bot,
     handle(client, chat, BotsApp, args) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

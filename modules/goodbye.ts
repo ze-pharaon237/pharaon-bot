@@ -1,4 +1,5 @@
 import Strings from "../lib/db";
+import { ModuleCategory as Cat } from "../lib/moduleCategory";
 import inputSanitization from "../sidekick/input-sanitization";
 import Greetings from "../database/greeting";
 import Client from "../sidekick/client";
@@ -11,6 +12,7 @@ module.exports = {
     name: "goodbye",
     description: GOODBYE.DESCRIPTION,
     extendedDescription: GOODBYE.EXTENDED_DESCRIPTION,
+    category: Cat.group ,
     demo: {
         isEnabled: true,
         text: [".goodbye", ".goodbye off", ".goodbye delete"],

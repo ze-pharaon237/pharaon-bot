@@ -18,6 +18,7 @@ const fluent_ffmpeg_1 = __importDefault(require("fluent-ffmpeg"));
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const qrcode_reader_1 = __importDefault(require("qrcode-reader"));
 const db_1 = __importDefault(require("../lib/db"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const message_type_1 = require("../sidekick/message-type");
 const baileys_1 = require("@adiwajshing/baileys");
 const DECODE = db_1.default.decodeqr;
@@ -26,6 +27,7 @@ module.exports = {
     description: DECODE.DESCRIPTION,
     extendedDescription: DECODE.EXTENDED_DESCRIPTION,
     demo: { isEnabled: false },
+    category: moduleCategory_1.ModuleCategory.convert,
     handle(client, chat, BotsApp, args) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         return __awaiter(this, void 0, void 0, function* () {

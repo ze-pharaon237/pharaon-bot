@@ -1,4 +1,5 @@
 import Strings from "../lib/db";
+import { ModuleCategory as Cat } from "../lib/moduleCategory";
 import format from "string-format";
 import inputSanitization from "../sidekick/input-sanitization";
 import { MessageType } from "../sidekick/message-type";
@@ -12,6 +13,7 @@ export = {
     description: alive.DESCRIPTION,
     extendedDescription: alive.EXTENDED_DESCRIPTION,
     demo: { isEnabled: true, text: ".alive" },
+    category: Cat.bot ,
     async handle(client: Client, chat: proto.IWebMessageInfo, BotsApp: BotsApp, args: string[]): Promise<void> {
         try {
             client.sendMessage(

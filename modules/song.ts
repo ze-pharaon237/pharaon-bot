@@ -5,6 +5,7 @@ import ytdl from "ytdl-core";
 import yts from "yt-search";
 import inputSanitization from "../sidekick/input-sanitization";
 import STRINGS from "../lib/db.js";
+import { ModuleCategory as Cat } from "../lib/moduleCategory";
 import Client from "../sidekick/client";
 import { proto } from "@adiwajshing/baileys";
 import BotsApp from "../sidekick/sidekick";
@@ -15,6 +16,7 @@ module.exports = {
     name: "song",
     description: SONG.DESCRIPTION,
     extendedDescription: SONG.EXTENDED_DESCRIPTION,
+    category: Cat.download ,
     demo: {
         isEnabled: true,
         text: [

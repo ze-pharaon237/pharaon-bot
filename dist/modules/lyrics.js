@@ -16,12 +16,14 @@ const message_type_1 = require("../sidekick/message-type");
 const got_1 = __importDefault(require("got"));
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const db_1 = __importDefault(require("../lib/db"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const songlyrics = require("songlyrics").default;
 module.exports = {
     name: "lyrics",
     description: db_1.default.lyrics.DESCRIPTION,
     extendedDescription: db_1.default.lyrics.EXTENDED_DESCRIPTION,
     demo: { isEnabled: true, text: ".lyrics Stairway to heaven" },
+    category: moduleCategory_1.ModuleCategory.search,
     handle(client, chat, BotsApp, args) {
         return __awaiter(this, void 0, void 0, function* () {
             const processing = yield client.sendMessage(BotsApp.chatId, db_1.default.lyrics.PROCESSING, message_type_1.MessageType.text);

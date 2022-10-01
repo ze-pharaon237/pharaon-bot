@@ -1,4 +1,5 @@
 import Strings from "../lib/db";
+import { ModuleCategory as Cat } from "../lib/moduleCategory";
 import inputSanitization from "../sidekick/input-sanitization";
 import googleDictionaryApi from "google-dictionary-api";
 import Client from "../sidekick/client.js";
@@ -14,6 +15,7 @@ module.exports = {
     description: MEANING.DESCRIPTION,
     extendedDescription: MEANING.EXTENDED_DESCRIPTION,
     demo: {isEnabled: true, text: ".meaning meaning"},
+    category: Cat.search ,
     async handle(client: Client, chat: proto.IWebMessageInfo, BotsApp: BotsApp, args: string[]): Promise<void> {
         try {
             var word: string = "";

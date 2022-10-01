@@ -1,6 +1,7 @@
 import Greetings from "../database/greeting";
 import inputSanitization from "../sidekick/input-sanitization";
 import Strings from "../lib/db";
+import { ModuleCategory as Cat } from "../lib/moduleCategory";
 import Client from "../sidekick/client";
 import { proto } from "@adiwajshing/baileys";
 import BotsApp from "../sidekick/sidekick";
@@ -11,6 +12,7 @@ module.exports = {
     name: "welcome",
     description: WELCOME.DESCRIPTION,
     extendedDescription: WELCOME.EXTENDED_DESCRIPTION,
+    category: Cat.group ,
     demo: {
         isEnabled: true,
         text: [".welcome", ".welcome off", ".welcome delete"],

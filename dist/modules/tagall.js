@@ -14,11 +14,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const db_js_1 = __importDefault(require("../lib/db.js"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const message_type_1 = require("../sidekick/message-type");
 module.exports = {
     name: "tagall",
     description: db_js_1.default.tagall.DESCRIPTION,
     extendedDescription: db_js_1.default.tagall.EXTENDED_DESCRIPTION,
+    category: moduleCategory_1.ModuleCategory.group,
     demo: {
         isEnabled: true,
         text: [

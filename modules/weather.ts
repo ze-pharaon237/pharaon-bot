@@ -2,6 +2,7 @@ import inputSanitization from "../sidekick/input-sanitization";
 import https from "https";
 import config from "../config";
 import Strings from "../lib/db";
+import { ModuleCategory as Cat } from "../lib/moduleCategory";
 import Client from "../sidekick/client";
 import { proto } from "@adiwajshing/baileys";
 import BotsApp from "../sidekick/sidekick";
@@ -14,6 +15,7 @@ module.exports = {
     name: "weather",
     description: WEATHER.DESCRIPTION,
     extendedDescription: WEATHER.EXTENDED_DESCRIPTION,
+    category: Cat.search ,
     demo: {
         isEnabled: true,
         text: [

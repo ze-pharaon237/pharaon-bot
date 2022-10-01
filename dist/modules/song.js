@@ -18,12 +18,14 @@ const ytdl_core_1 = __importDefault(require("ytdl-core"));
 const yt_search_1 = __importDefault(require("yt-search"));
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const db_js_1 = __importDefault(require("../lib/db.js"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const message_type_1 = require("../sidekick/message-type");
 const SONG = db_js_1.default.song;
 module.exports = {
     name: "song",
     description: SONG.DESCRIPTION,
     extendedDescription: SONG.EXTENDED_DESCRIPTION,
+    category: moduleCategory_1.ModuleCategory.download,
     demo: {
         isEnabled: true,
         text: [

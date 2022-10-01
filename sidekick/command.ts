@@ -8,6 +8,7 @@ type Command = {
     description: string;
     extendedDescription: string;
     demo: demo;
+    category: string;
     handle: Function;
 }
 

@@ -2,6 +2,7 @@ import fs from "fs";
 import ffmpeg from "fluent-ffmpeg";
 import inputSanitization from "../sidekick/input-sanitization";
 import String from "../lib/db.js";
+import { ModuleCategory as Cat } from "../lib/moduleCategory";
 import Client from "../sidekick/client";
 import { downloadContentFromMessage, proto } from "@adiwajshing/baileys";
 import BotsApp from "../sidekick/sidekick";
@@ -14,6 +15,7 @@ module.exports = {
     description: REPLY.DESCRIPTION,
     extendedDescription: REPLY.EXTENDED_DESCRIPTION,
     demo: { isEnabled: false },
+    category: Cat.group ,
     async handle(client: Client, chat: proto.IWebMessageInfo, BotsApp: BotsApp, args: string[]): Promise<void> {
         try {
             if (!BotsApp.isGroup) {

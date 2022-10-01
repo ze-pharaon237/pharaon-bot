@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const db_1 = __importDefault(require("../lib/db"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const qrcode_1 = require("@nuintun/qrcode");
 const fs_1 = __importDefault(require("fs"));
 const message_type_1 = require("../sidekick/message-type");
@@ -22,6 +23,7 @@ module.exports = {
     name: "qr",
     description: QR.DESCRIPTION,
     extendedDescription: QR.EXTENDED_DESCRIPTION,
+    category: moduleCategory_1.ModuleCategory.convert,
     demo: { isEnabled: true, text: ".qr Hey, I am BotsApp." },
     handle(client, chat, BotsApp, args) {
         return __awaiter(this, void 0, void 0, function* () {

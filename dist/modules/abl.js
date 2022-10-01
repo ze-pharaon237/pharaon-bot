@@ -13,6 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const db_1 = __importDefault(require("../lib/db"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const string_format_1 = __importDefault(require("string-format"));
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const blacklist_1 = __importDefault(require("../database/blacklist"));
@@ -23,6 +24,7 @@ module.exports = {
     description: abl.DESCRIPTION,
     extendedDescription: abl.EXTENDED_DESCRIPTION,
     demo: { isEnabled: true, text: ".abl" },
+    category: moduleCategory_1.ModuleCategory.bot,
     handle(client, chat, BotsApp, args) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

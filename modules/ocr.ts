@@ -1,5 +1,6 @@
 import ocrSpace from "ocr-space-api-wrapper";
 import STRINGS from "../lib/db.js";
+import { ModuleCategory as Cat } from "../lib/moduleCategory";
 import config from "../config";
 import inputSanitization from "../sidekick/input-sanitization";
 import Client from "../sidekick/client";
@@ -13,6 +14,7 @@ module.exports = {
     name: "ocr",
     description: OCR.DESCRIPTION,
     extendedDescription: OCR.EXTENDED_DESCRIPTION,
+    category: Cat.convert ,
     async handle(client: Client, chat: proto.IWebMessageInfo, BotsApp: BotsApp, args: string[]): Promise<void>{
         try {
             

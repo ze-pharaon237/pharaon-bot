@@ -12,6 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 const db_1 = __importDefault(require("../lib/db"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const message_type_1 = require("../sidekick/message-type");
 const axios_1 = __importDefault(require("axios"));
@@ -51,6 +52,7 @@ module.exports = {
     description: quote.DESCRIPTION,
     extendedDescription: quote.EXTENDED_DESCRIPTION,
     demo: { isEnabled: false, },
+    category: moduleCategory_1.ModuleCategory.convert,
     handle(client, chat, BotsApp, args) {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {

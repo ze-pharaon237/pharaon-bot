@@ -15,12 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const greeting_1 = __importDefault(require("../database/greeting"));
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const db_1 = __importDefault(require("../lib/db"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const message_type_1 = require("../sidekick/message-type");
 const WELCOME = db_1.default.welcome;
 module.exports = {
     name: "welcome",
     description: WELCOME.DESCRIPTION,
     extendedDescription: WELCOME.EXTENDED_DESCRIPTION,
+    category: moduleCategory_1.ModuleCategory.group,
     demo: {
         isEnabled: true,
         text: [".welcome", ".welcome off", ".welcome delete"],

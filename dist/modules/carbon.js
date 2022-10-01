@@ -36,6 +36,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const db_js_1 = __importDefault(require("../lib/db.js"));
+const moduleCategory_1 = require("../lib/moduleCategory");
 const Carbon = __importStar(require("unofficial-carbon-now"));
 const input_sanitization_1 = __importDefault(require("../sidekick/input-sanitization"));
 const string_format_1 = __importDefault(require("string-format"));
@@ -45,6 +46,7 @@ module.exports = {
     name: "carbon",
     description: CARBON.DESCRIPTION,
     extendedDescription: CARBON.EXTENDED_DESCRIPTION,
+    category: moduleCategory_1.ModuleCategory.convert,
     demo: {
         isEnabled: true,
         text: [
