@@ -65,7 +65,7 @@
     "any-base" "^1.1.0"
     "buffer" "^5.2.0"
     "exif-parser" "^0.1.12"
-    "file-type" "^16.5.4"
+    "file-type" "^9.0.0"
     "load-bmfont" "^1.3.1"
     "mkdirp" "^0.5.1"
     "phin" "^2.9.1"
@@ -97,7 +97,7 @@
   dependencies:
     "@babel/runtime" "^7.7.2"
     "@jimp/utils" "^0.16.1"
-    "jpeg-js" "0.4.4"
+    "jpeg-js" "0.4.2"
 
 "@jimp/plugin-blit@^0.16.1", "@jimp/plugin-blit@>=0.3.5":
   "integrity" "sha512-fKFNARm32RoLSokJ8WZXHHH2CGzz6ire2n1Jh6u+XQLhk9TweT1DcLHIXwQMh8oR12KgjbgsMGvrMVlVknmOAg=="
@@ -1653,10 +1653,10 @@
   "resolved" "https://registry.npmjs.org/file-type/-/file-type-9.0.0.tgz"
   "version" "9.0.0"
 
-"file-type@16.5.4":
+"file-type@16.5.3":
   "integrity" "sha512-uVsl7iFhHSOY4bEONLlTK47iAHtNsFHWP5YE4xJfZ4rnX7S1Q3wce09XgqSC7E/xh8Ncv/be1lNoyprlUH/x6A=="
   "resolved" "https://registry.npmjs.org/file-type/-/file-type-16.5.3.tgz"
-  "version" "16.5.4"
+  "version" "16.5.3"
   dependencies:
     "readable-web-to-node-stream" "^3.0.0"
     "strtok3" "^6.2.4"
@@ -2163,10 +2163,10 @@
     "@jimp/types" "^0.16.1"
     "regenerator-runtime" "^0.13.3"
 
-"jpeg-js@0.4.4":
+"jpeg-js@0.4.2":
   "integrity" "sha512-+az2gi/hvex7eLTMTlbRLOhH6P6WFdk2ITI8HJsaH2VqYO0I594zXSYEP+tf4FW+8Cy68ScDXoAsQdyQanv3sw=="
-  "resolved" "https://registry.npmjs.org/jpeg-js/-/jpeg-js-0.4.4.tgz"
-  "version" "0.4.4"
+  "resolved" "https://registry.npmjs.org/jpeg-js/-/jpeg-js-0.4.2.tgz"
+  "version" "0.4.2"
 
 "jsbn@~0.1.0":
   "integrity" "sha1-peZUwuWi3rXyAdls77yoDA7y9RM= sha512-UVU9dibq2JcFWxQPA6KCqj5O42VOmAY3zQUfEKxU0KpTGXwNoCjkX1e13eHNvw/xPynt6pU0rZ1htjWTNTSXsg=="
@@ -2539,10 +2539,10 @@
   "resolved" "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
   "version" "1.0.4"
 
-"moment-timezone@^0.5.35":
+"moment-timezone@^0.5.34":
   "integrity" "sha512-3zAEHh2hKUs3EXLESx/wsgw6IQdusOT8Bxm3D9UrHPQR7zlMmzwybC8zHEM1tQ4LJwP7fcxrWr8tuBg05fFCbg=="
-  "resolved" "https://registry.npmjs.org/moment-timezone/-/moment-timezone-0.5.35.tgz"
-  "version" "0.5.35"
+  "resolved" "https://registry.npmjs.org/moment-timezone/-/moment-timezone-0.5.34.tgz"
+  "version" "0.5.34"
   dependencies:
     "moment" ">= 2.9.0"
 
@@ -2579,7 +2579,7 @@
     "@tokenizer/token" "^0.3.0"
     "content-type" "^1.0.4"
     "debug" "^4.3.4"
-    "file-type" "16.5.4"
+    "file-type" "16.5.3"
     "media-typer" "^1.1.0"
     "strtok3" "^6.3.0"
     "token-types" "^4.2.0"
@@ -3301,7 +3301,7 @@
     "inflection" "^1.13.2"
     "lodash" "^4.17.21"
     "moment" "^2.29.1"
-    "moment-timezone" "^0.5.35"
+    "moment-timezone" "^0.5.34"
     "pg-connection-string" "^2.5.0"
     "retry-as-promised" "^5.0.0"
     "semver" "^7.3.5"
@@ -3345,10 +3345,10 @@
   "resolved" "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.7.tgz"
   "version" "3.0.7"
 
-"simple-git@^3.5.0":
+"simple-git@^2.47.0":
   "integrity" "sha512-z4qtrRuaAFJS4PUd0g+xy7aN4y+RvEt/QTJpR184lhJguBA1S/LsVlvE/CM95RsYMOFJG3NGGDjqFCzKU19S/A=="
   "resolved" "https://registry.npmjs.org/simple-git/-/simple-git-2.48.0.tgz"
-  "version" "3.5.0"
+  "version" "2.48.0"
   dependencies:
     "@kwsites/file-exists" "^1.1.1"
     "@kwsites/promise-deferred" "^1.1.1"
