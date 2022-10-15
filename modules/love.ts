@@ -35,7 +35,6 @@ export = {
             }
             await client.getGroupMetaData(BotsApp.chatId, BotsApp);
             if(args.length == 2){
-                console.log(BotsApp);
                 var member1 = args[0].substring(1);
                 var member2 = args[1].substring(1);
                 var isMember1 = await inputSanitization.isMember(

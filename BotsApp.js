@@ -93,15 +93,16 @@ async function main() {
 
 
     client.on('group-participants-update', async update => {
-        // console.log("-------------------" + "GROUP PARTICIPANT UPDATE" + "-------------------");
-        // console.log(update.participants);
-        // console.log(update.action);
-        // console.log(update.jid);
+        console.log("-------------------" + "GROUP PARTICIPANT UPDATE" + "-------------------");
+        console.log(update.participants);
+        console.log(update.action);
+        console.log(update.jid);
         var groupId = update.jid;
 
         try {
             if (update.action === 'add') {
                 var enable = await Greetings.checkSettings(groupId, "welcome");
+                console.log(enable);
                 if (enable === false || enable === "OFF") {
                     return;
                 }
