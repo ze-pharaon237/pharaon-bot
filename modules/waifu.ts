@@ -20,11 +20,11 @@ export = {
             const list_category = waifu.WAIFU_CATEGORY_SFW.split(" ");
             var wcategory = list_category[0];
             if (!args[0]) {
-                const url = getWaifuUrl(wcategory);
-                console.log("url = " + url[0] );
+                const url = await getWaifuUrl(wcategory);
+                console.log("url = " + url );
                 client.sendMessage(
                     BotsApp.chatId,
-                    { url: url[0] },
+                    { url: url },
                     MessageType.image,
                     {
                         caption:"Waifu image generate by PharaonBot",
@@ -33,7 +33,7 @@ export = {
                 return;
             }else if(args.length == 1){
                 if(list_category.includes(args[0])){
-                    const url = getWaifuUrl(args[0]);
+                    const url = await getWaifuUrl(args[0]);
                     console.log("url = " + url);
                     client.sendMessage(
                     BotsApp.chatId,
@@ -66,6 +66,7 @@ async function getWaifuUrl(wcategory){
         await Axios.get(url + wtype + "/" + wcategory)
         .then((res) => {
             console.log(res.data);
+            console.log(res.data.url);
             return res.data.url;
         })
         .catch((error) => {
