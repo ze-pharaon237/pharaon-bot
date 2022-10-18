@@ -50,7 +50,7 @@ export = {
             if(url.includes('.gif')){
                 mtype = MessageType.gif;
                 tomp4(url);
-                wurl = "./tmp/fichier.mp4";
+                wurl = './tmp/fichier.mp4';
             }else{
                 mtype = MessageType.image;
                 wurl = url;
@@ -105,7 +105,28 @@ export = {
 };
 
 function tomp4(gifUrl){
+    try{
+        console.log("gifurl = " + gifUrl);
+        var process = new ffmpeg(gifUrl);
+        process.then(function(video){
+            video
+            .inputFormat('gif')
+            .toFormat('mp4')
+            .outputOptions(['-pix_fmt yuv420p', '-movflags frag_keyframe+empty_moov', '-movflags +faststart'])
+            .save('./tmp/fichier.mp4', function(error, file){
+               if(!error){
+                   console.log('video file' + file);
+                }
+            });
+        }, function(err){
+            console.log("ff error = " + err);
+        });
+    } catch (e) {
+        console.log(e.code);
+        console.log(e.msg);
+    }
 
+    /*
     ffmpeg(gifUrl)
     .inputFormat('gif')
     .outputOptions(['-pix_fmt yuv420p', '-movflags frag_keyframe+empty_moov', '-movflags +faststart'])
@@ -117,6 +138,7 @@ function tomp4(gifUrl){
     .on('end', function() {
         console.log('Finished processing');
     });
+    */
 }
 
 async function gif2mp4(gifUrl) {
