@@ -41,7 +41,7 @@ export = {
             return url;
         }
 
-        const send => (url) => {
+        const send = (url) => {
             client.sendMessage(
                 BotsApp.chatId,
                 { url: url },
