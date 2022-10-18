@@ -50,7 +50,7 @@ export = {
             if(url.includes('.gif')){
                 mtype = MessageType.gif;
                 tomp4(url);
-                wurl = "./tmp/img.mp4";
+                wurl = "./tmp/fichier.mp4";
             }else{
                 mtype = MessageType.image;
                 wurl = url;
@@ -110,7 +110,7 @@ function tomp4(gifUrl){
     .inputFormat('gif')
     .outputOptions(['-pix_fmt yuv420p', '-movflags frag_keyframe+empty_moov', '-movflags +faststart'])
     .toFormat('mp4')
-    .save('fichier.mp4')
+    .save('./tmp/fichier.mp4')
     .on('error', function(err, stdout, stderr) {
         console.log('Cannot process video: ' + err.message);
     })
