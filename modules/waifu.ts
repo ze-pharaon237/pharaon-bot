@@ -16,11 +16,32 @@ export = {
     demo: { isEnabled: true },
     category: Cat.anime ,
     async handle(client: Client, chat: proto.IWebMessageInfo, BotsApp: BotsApp, args: string[]): Promise<void> {
+
+        const getWaifuUrl = async (wcategory) => {
+            const url = "https://api.waifu.pics/";
+            const wtype = "sfw";
+            try{
+                console.log(url + wtype + "/" + wcategory);
+                await Axios.get(url + wtype + "/" + wcategory)
+                .then((res) => {
+                    console.log(res.data);
+                    console.log(res.data.url);
+                    return res.data.url;
+                })
+                .catch((error) => {
+                    console.log("axios error : " + error);
+                });
+            } catch (err) {
+                console.log(err);
+            }
+            return "hum";
+        }
+
         try {
             const list_category = waifu.WAIFU_CATEGORY_SFW.split(" ");
             var wcategory = list_category[0];
             if (!args[0]) {
-                const url = await getWaifuUrl(wcategory);
+                let url = await getWaifuUrl(wcategory);
                 console.log("url = " + url );
                 client.sendMessage(
                     BotsApp.chatId,
@@ -33,7 +54,7 @@ export = {
                 return;
             }else if(args.length == 1){
                 if(list_category.includes(args[0])){
-                    const url = await getWaifuUrl(args[0]);
+                    let url = await getWaifuUrl(args[0]);
                     console.log("url = " + url);
                     client.sendMessage(
                     BotsApp.chatId,
@@ -61,14 +82,18 @@ export = {
 async function getWaifuUrl(wcategory){
     const url = "https://api.waifu.pics/";
     const wtype = "sfw";
-    console.log(url + wtype + "/" + wcategory);
-    await Axios.get(url + wtype + "/" + wcategory)
-    .then((res) => {
-        console.log(res.data);
-        console.log(res.data.url);
-        return res.data.url;
-    })
-    .catch((error) => {
-        console.log("axios error : " + error);
-    });
+    try{
+        console.log(url + wtype + "/" + wcategory);
+        await Axios.get(url + wtype + "/" + wcategory)
+        .then((res) => {
+            console.log(res.data);
+            console.log(res.data.url);
+            return res.data.url;
+        })
+        .catch((error) => {
+            console.log("axios error : " + error);
+        });
+    } catch (err) {
+        console.log(err);
+    }
 }
