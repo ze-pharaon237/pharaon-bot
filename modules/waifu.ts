@@ -54,7 +54,6 @@ export = {
                     {
                         caption:"Waifu image generate by PharaonBot",
                     }
-                    return
                 ).catch(err => inputSanitization.handleError(err, client, BotsApp));
                 return;
             }else if(args.length == 1){
@@ -68,8 +67,8 @@ export = {
                         {
                             caption:"Waifu image generate by PharaonBot",
                         }
-                        return
                     ).catch(err => inputSanitization.handleError(err, client, BotsApp));
+                    return;
                 }else{
                     client.sendMessage(
                         BotsApp.chatId,

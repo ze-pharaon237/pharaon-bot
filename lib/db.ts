@@ -390,10 +390,10 @@ const data = {
     waifu: {
       DESCRIPTION: "Get a random picture of a waifu",
       EXTENDED_DESCRIPTION:
-            "Obtain waifu picture by entering the just waifu or waifu and category. \nEx:  \n\t'waifu'\n\t'waifu kitsune'",
+            "Obtain waifu picture by entering just waifu or waifu and category. \nEx:  \n\t'.waifu'\n\t'.waifu kitsune'",
       NOT_FOUND_CATEGORY: "Waifu category '{category}' not found !",
       WAIFU_CATEGORY_SFW: "waifu neko shinobu megumin bully cuddle cry hug awoo kiss lick pat smug bonk yeet blush smile wave highfive handhold nom bite glomp slap kill kick happy wink poke dance cringe",
-      WAIFU_CATEGORY_NSFW: "waifu neko trap blowjob",
+      //WAIFU_CATEGORY_NSFW: "waifu neko trap blowjob",
       ERROR: "Unknow error, please contact the owner to have a solution !"
     },
     weather: {
