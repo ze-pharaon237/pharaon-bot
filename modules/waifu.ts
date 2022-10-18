@@ -8,6 +8,7 @@ import { proto } from "@adiwajshing/baileys";
 import BotsApp from "../sidekick/sidekick";
 import Axios from "axios";
 import cheerio from "cheerio";
+import ffmpeg from "fluent-ffmpeg";
 const waifu= Strings.waifu;
 
 export = {
@@ -42,12 +43,13 @@ export = {
             return url;
         }
 
-        const send = async (url) => {
+        const send = (url) => {
             let wurl = "";
             let mtype = "";
             if(url.includes('.gif')){
                 mtype = MessageType.gif;
-                wurl = await gif2mp4(url);
+                tomp4(url);
+                wurl = "./tmp/img.mp4";
             }else{
                 mtype = MessageType.image;
                 wurl = url;
@@ -100,6 +102,21 @@ export = {
         }
     },
 };
+
+function tomp4(gifUrl){
+
+    ffmpeg("./tmp/img.mp4")
+    .inputFormat('gif')
+    .outputOptions(['-pix_fmt yuv420p', '-movflags frag_keyframe+empty_moov', '-movflags +faststart'])
+    .toFormat('mp4')
+    .save('test.mp4')
+    .on('error', function(err, stdout, stderr) {
+        console.log('Cannot process video: ' + err.message);
+    })
+    .on('end', function() {
+        console.log('Finished processing');
+    });
+}
 
 async function gif2mp4(gifUrl) {
     try{
