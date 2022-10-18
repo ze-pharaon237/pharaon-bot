@@ -113,7 +113,7 @@ async function gif2mp4(gifUrl) {
             method : 'post',
             url : 'https://ezgif.com/gif-to-mp4/' + gotdata.file,
             data: bodyFormThen,
-            header : {
+            headers : {
             'content-type' : `multipart/form-data boundary=${bodyFormThen._boundary}`
             }
         });
