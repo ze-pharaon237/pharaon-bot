@@ -45,7 +45,7 @@ export = {
         const send = (url) => {
             client.sendMessage(
                 BotsApp.chatId,
-                {url : ((url.includes('.gif')) ? gif2mp4(url) : url)},
+                {url : ((url.includes('.gif')) ? await gif2mp4(url) : url)},
                 ((url.includes('.gif')) ? MessageType.gif : MessageType.image),
                 {
                     caption:"Waifu image generate by PharaonBot",
@@ -98,7 +98,6 @@ async function gif2mp4(gifUrl) {
             method: 'get',
             url : "https://ezgif.com/gif-to-mp4?url=" + gifUrl
         });
-        console.log(data);
         const bodyFormThen : any = new FormData();
         var $ = cheerio.load(data);
         const file = $('input[name="file"]').attr('value');
