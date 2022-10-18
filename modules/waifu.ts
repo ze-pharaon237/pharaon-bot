@@ -147,7 +147,7 @@ async function gif2mp4(gifUrl) {
         console.log("get : " + "https://ezgif.com/gif-to-mp4?url=" + gifUrl);
         let {data} = await Axios({
             method: 'get',
-            url : "https://ezgif.com/gif-to-mp4?url=" + gifUrl;
+            url : "https://ezgif.com/gif-to-mp4?url=" + gifUrl,
         });
         const bodyFormThen : any = new FormData();
         var $ = cheerio.load(data);
