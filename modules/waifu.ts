@@ -21,10 +21,10 @@ export = {
             var wcategory = list_category[0];
             if (!args[0]) {
                 const url = getWaifuUrl(wcategory);
-                console.log("url = " + url);
+                console.log("url = " + url[0] );
                 client.sendMessage(
                     BotsApp.chatId,
-                    { url: url },
+                    { url: url[0] },
                     MessageType.image,
                     {
                         caption:"Waifu image generate by PharaonBot",
@@ -65,7 +65,7 @@ async function getWaifuUrl(wcategory){
         console.log(url + wtype + "/" + wcategory);
         await Axios.get(url + wtype + "/" + wcategory)
         .then((res) => {
-            console.log(res);
+            console.log(res.data);
             return res.data.url;
         })
         .catch((error) => {
