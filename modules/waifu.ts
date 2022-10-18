@@ -9,6 +9,7 @@ import BotsApp from "../sidekick/sidekick";
 import Axios from "axios";
 import cheerio from "cheerio";
 import ffmpeg from "fluent-ffmpeg";
+import { writeFile } from 'fs/promises';
 const waifu= Strings.waifu;
 
 export = {
@@ -105,11 +106,11 @@ export = {
 
 function tomp4(gifUrl){
 
-    ffmpeg("./tmp/img.mp4")
+    ffmpeg(gitUrl);
     .inputFormat('gif')
     .outputOptions(['-pix_fmt yuv420p', '-movflags frag_keyframe+empty_moov', '-movflags +faststart'])
     .toFormat('mp4')
-    .save('test.mp4')
+    .save('fichier.mp4')
     .on('error', function(err, stdout, stderr) {
         console.log('Cannot process video: ' + err.message);
     })
