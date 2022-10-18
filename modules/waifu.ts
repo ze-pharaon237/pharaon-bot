@@ -99,17 +99,17 @@ async function gif2mp4(gifUrl) {
             url : "https://ezgif.com/gif-to-mp4?url=" + gifUrl
         });
         console.log(data);
-        cont bodyFormThen : any = new FormData();
+        const bodyFormThen : any = new FormData();
         var $ = cheerio.load(data);
         const file = $('input[name="file"]').attr('value');
         const convert = $('input[name="file"]').attr('value');
         const gotdata = {
             file : file,
-            convert ; convert
+            convert : convert
         };
         bodyFormThen.append('file', gotdata.file);
         bodyFormThen.append('convert', gotdata.convert);
-        les res = await Axios({
+        let res = await Axios({
             method : 'post',
             url : 'https://ezgif.com/gif-to-mp4/' + gotdata.file,
             data: bodyFormThen,
