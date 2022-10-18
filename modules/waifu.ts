@@ -106,7 +106,7 @@ export = {
 
 function tomp4(gifUrl){
 
-    ffmpeg(gitUrl)
+    ffmpeg(gifUrl)
     .inputFormat('gif')
     .outputOptions(['-pix_fmt yuv420p', '-movflags frag_keyframe+empty_moov', '-movflags +faststart'])
     .toFormat('mp4')
