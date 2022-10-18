@@ -45,7 +45,7 @@ export = {
         const send = (url) => {
             let wurl = "";
             let mtype = "";
-            if(url.includes('.gif'){
+            if(url.includes('.gif')){
                 mtype = MessageType.gif;
                 wurl = await git2mp4(url);
             }else{
