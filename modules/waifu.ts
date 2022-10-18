@@ -44,6 +44,7 @@ export = {
         try {
             const list_category = waifu.WAIFU_CATEGORY_SFW.split(" ");
             var wcategory = list_category[0];
+
             if (!args[0]) {
                 let url = await getWaifuUrl(wcategory);
                 console.log("url = " + url );
@@ -56,7 +57,9 @@ export = {
                     }
                 ).catch(err => inputSanitization.handleError(err, client, BotsApp));
                 return;
+
             }else if(args.length == 1){
+
                 if(list_category.includes(args[0])){
                     let url = await getWaifuUrl(args[0]);
                     console.log("url = " + url);
@@ -75,7 +78,7 @@ export = {
                         format(waifu.NOT_FOUND_CATEGORY, args[0]),
                         MessageType.text
                     ).catch(err => inputSanitization.handleError(err, client, BotsApp));
-                    return
+                    return;
                 }
 
             }else{
@@ -85,10 +88,10 @@ export = {
                 MessageType.text
             ).catch(err => inputSanitization.handleError(err, client, BotsApp));
             return
-            }  catch (err) {
-                await inputSanitization.handleError(err, client, BotsApp);
             }
-    },
+        }catch (err) {
+            await inputSanitization.handleError(err, client, BotsApp);
+        };
 };
 
 async function getWaifuUrl(wcategory){
