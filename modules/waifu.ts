@@ -43,10 +43,19 @@ export = {
         }
 
         const send = (url) => {
+            let wurl = "";
+            let mtype = "";
+            if(url.includes('.gif'){
+                mtype = MessageType.gif;
+                wurl = await git2mp4(url);
+            }else{
+                mtype = MessageType.image;
+                wurl = url;
+            }
             client.sendMessage(
                 BotsApp.chatId,
-                {url : ((url.includes('.gif')) ? await gif2mp4(url) : url)},
-                ((url.includes('.gif')) ? MessageType.gif : MessageType.image),
+                {url : wurl},
+                mtype,
                 {
                     caption:"Waifu image generate by PharaonBot",
                 }
