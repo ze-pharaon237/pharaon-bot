@@ -26,7 +26,7 @@ export = {
                     { url: url },
                     MessageType.image,
                     {
-                        caption:"Waifu image generate by PharaonBot";
+                        caption:"Waifu image generate by PharaonBot",
                     }
                 ).catch(err => inputSanitization.handleError(err, client, BotsApp));
                 return;
@@ -38,7 +38,7 @@ export = {
                     { url: url },
                     MessageType.image,
                     {
-                        caption:"Waifu image generate by PharaonBot";
+                        caption:"Waifu image generate by PharaonBot",
                     }
                 ).catch(err => inputSanitization.handleError(err, client, BotsApp));
                 }
