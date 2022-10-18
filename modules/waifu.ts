@@ -8,8 +8,6 @@ import { proto } from "@adiwajshing/baileys";
 import BotsApp from "../sidekick/sidekick";
 import Axios from "axios";
 import cheerio from "cheerio";
-import ffmpeg from "fluent-ffmpeg";
-import { writeFile } from 'fs/promises';
 import FormData from 'form-data';
 const waifu= Strings.waifu;
 
@@ -104,61 +102,16 @@ export = {
     },
 };
 
-function tomp4(gifUrl){
-    try{
-        console.log("gifurl = " + gifUrl);
-        var process = new ffmpeg(gifUrl);
-        process.then(function(video){
-            video
-            .inputFormat('gif')
-            .toFormat('mp4')
-            .outputOptions(['-pix_fmt yuv420p', '-movflags frag_keyframe+empty_moov', '-movflags +faststart'])
-            .save('./tmp/fichier.mp4', function(error, file){
-               if(!error){
-                   console.log('video file' + file);
-                }
-            });
-        }, function(err){
-            console.log("ff error = " + err);
-        });
-    } catch (e) {
-        console.log(e.code);
-        console.log(e.msg);
-    }
-
-    /*
-    ffmpeg(gifUrl)
-    .inputFormat('gif')
-    .outputOptions(['-pix_fmt yuv420p', '-movflags frag_keyframe+empty_moov', '-movflags +faststart'])
-    .toFormat('mp4')
-    .save('./tmp/fichier.mp4')
-    .on('error', function(err, stdout, stderr) {
-        console.log('Cannot process video: ' + err.message);
-    })
-    .on('end', function() {
-        console.log('Finished processing');
-    });
-    */
-}
-
 async function gif2mp4(gifUrl) {
     try{
-        console.log("get : " + "https://ezgif.com/gif-to-mp4?url=" + gifUrl);
-        let {data} = await Axios({
-            method: 'get',
-            url : "https://ezgif.com/gif-to-mp4?url=" + gifUrl,
-        });
+        let {data} = await Axios("https://ezgif.com/gif-to-mp4?url=" + gifUrl);
         const bodyFormThen : any = new FormData();
         var $ = cheerio.load(data);
         const file = $('input[name="file"]').attr('value');
-        const gotdata = {
-            file : file,
-        };
-        bodyFormThen.append('file', gotdata.file);
-        console.log("post = " + 'https://ezgif.com/gif-to-mp4/' + gotdata.file );
+        bodyFormThen.append('file', file);
         let res = await Axios({
             method : 'post',
-            url : 'https://ezgif.com/gif-to-mp4/' + gotdata.file,
+            url : 'https://ezgif.com/gif-to-mp4/' + file,
             data: bodyFormThen,
             headers : {
             'content-type' : `application/x-www-form-urlencoded`
@@ -166,7 +119,6 @@ async function gif2mp4(gifUrl) {
         });
         $ = cheerio.load(res.data)
             const result = 'https:' + $('div#output > p.outfile > video > source').attr('src');
-            console.log("result : " + result)
             return result;
     } catch (err) {
         console.log("gif2mp4 error = " + err);
