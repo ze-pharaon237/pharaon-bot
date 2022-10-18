@@ -60,7 +60,7 @@ async function getWaifuUrl(wcategory){
     const url = "https://api.waifu.pics/";
     const wtype = "sfw";
     try{
-        console.log(url + wtype + "/" + wcategory));
+        console.log(url + wtype + "/" + wcategory);
         await Axios.get(url + wtype + "/" + wcategory)
         .then((res) => {
             console.log(res);
