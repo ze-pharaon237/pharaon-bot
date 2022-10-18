@@ -20,21 +20,25 @@ export = {
         const getWaifuUrl = async (wcategory) => {
             const url = "https://api.waifu.pics/";
             const wtype = "sfw";
+            let url;
             try{
                 console.log(url + wtype + "/" + wcategory);
                 await Axios.get(url + wtype + "/" + wcategory)
                 .then((res) => {
-                    console.log(res.data);
-                    console.log(res.data.url);
-                    return res.data.url;
+                    url = res;
+                    console.log(url.data);
+                    console.log(url.data.url);
+                    url = url.data.url;
                 })
                 .catch((error) => {
                     console.log("axios error : " + error);
+                    url = "";
                 });
             } catch (err) {
                 console.log(err);
+                url = "";
             }
-            return "hum";
+            return url;
         }
 
         try {
