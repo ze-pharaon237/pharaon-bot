@@ -18,12 +18,12 @@ export = {
     async handle(client: Client, chat: proto.IWebMessageInfo, BotsApp: BotsApp, args: string[]): Promise<void> {
 
         const getWaifuUrl = async (wcategory) => {
-            const url = "https://api.waifu.pics/";
+            const wurl = "https://api.waifu.pics/";
             const wtype = "sfw";
             let url;
             try{
-                console.log(url + wtype + "/" + wcategory);
-                await Axios.get(url + wtype + "/" + wcategory)
+                console.log(wurl + wtype + "/" + wcategory);
+                await Axios.get(wurl + wtype + "/" + wcategory)
                 .then((res) => {
                     url = res;
                     console.log(url.data);
