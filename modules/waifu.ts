@@ -103,9 +103,15 @@ export = {
 
 async function gif2mp4(gifUrl) {
     try{
+        const bodyForm: any = new FormData();
+        bodyForm.append('new-image-url', gifUrl);
+        bodyForm.append('new-image', "");
         let {data} = await Axios({
-            method: 'get',
-            url : "https://ezgif.com/gif-to-mp4?url=" + gifUrl
+            method: 'post',
+            url : "https://ezgif.com/gif-to-mp4",
+            headers: {
+                'Content-Type': `multipart/form-data boundary=${bodyForm._boundary}`
+            }
         });
         const bodyFormThen : any = new FormData();
         var $ = cheerio.load(data);
@@ -130,6 +136,6 @@ async function gif2mp4(gifUrl) {
             console.log("result : " + result)
             return result;
     } catch (err) {
-        console.log(err);
+        console.log("gif2mp4 error = " + err);
     }
 }
