@@ -390,10 +390,9 @@ const data = {
     waifu: {
       DESCRIPTION: "Get a random picture of a waifu",
       EXTENDED_DESCRIPTION:
-            "Obtain waifu picture by entering just waifu or waifu and category. \nEx:  \n\t'.waifu'\n\t'.waifu kitsune'. \n Category : \n\t ○ waifu \n\t ○ neko \n\t ○ shinobu \n\t ○ megumin \n\t ○ bully \n\t ○ cuddle \n\t ○ cry \n\t ○ hug \n\t ○ awoo \n\t ○ kiss \n\t ○ lick \n\t ○ pat \n\t ○ smug \n\t ○ bonk \n\t ○ yeet \n\t ○ blush \n\t ○ smile \n\t ○ wave highfive \n\t ○ handhold \n\t ○ nom \n\t ○ bite \n\t ○ glomp \n\t ○ slap \n\t ○ kill \n\t ○ kick \n\t ○ happy \n\t ○ wink \n\t ○ poke \n\t ○ dance \n\t ○ cringe",
-      NOT_FOUND_CATEGORY: "Waifu category '{category}' not found !",
+            "Obtain waifu picture by entering just waifu or waifu and category. \n\nEx:  \n\t'.waifu'\n\t'.waifu kitsune'. \n\nCategory : \n\t ○ waifu \n\t ○ neko \n\t ○ shinobu \n\t ○ megumin \n\t ○ bully \n\t ○ cuddle \n\t ○ cry \n\t ○ hug \n\t ○ awoo \n\t ○ kiss \n\t ○ lick \n\t ○ pat \n\t ○ smug \n\t ○ bonk \n\t ○ yeet \n\t ○ blush \n\t ○ smile \n\t ○ wave highfive \n\t ○ handhold \n\t ○ nom \n\t ○ bite \n\t ○ glomp \n\t ○ slap \n\t ○ kill \n\t ○ kick \n\t ○ happy \n\t ○ wink \n\t ○ poke \n\t ○ dance \n\t ○ cringe",
+      NOT_FOUND_CATEGORY: "Waifu category '{category}' not found !\nTyped .help waifu to see full category list.",
       CATEGORY: "waifu neko shinobu megumin bully cuddle cry hug awoo kiss lick pat smug bonk yeet blush smile wave highfive handhold nom bite glomp slap kill kick happy wink poke dance cringe",
-      //WAIFU_CATEGORY_NSFW: "waifu neko trap blowjob",
       ERROR: "Unknow error, please contact the owner to have a solution !"
     },
     weather: {
@@ -423,6 +422,14 @@ const data = {
             "```Greetings are enabled: False \nCurrently greeting new members with:```",
         WELCOME_DELETED: "```Welcome message deleted.```",
         WELCOME_UPDATED: "```Welcome message updated and enabled.```",
+    },
+    xwaifu: {
+      DESCRIPTION: "Get a random picture of a xwaifu (+18)",
+      EXTENDED_DESCRIPTION:
+            "Obtain xwaifu (+18) picture by entering just xwaifu or xwaifu and category. \n\nEx:  \n\t'.xwaifu'\n\t'.xwaifu neko'. \n\nCategory : \n\t ○ waifu \n\t ○ neko \n\t ○ trap \n\t ○ blowjob",
+      NOT_FOUND_CATEGORY: "xwaifu category '{category}' not found !\nTyped .help xwaifu to see full category list.",
+      CATEGORY: "waifu neko trap blowjob",
+      ERROR: "Unknow error, please contact the owner to have a solution !"
     },
     goodbye: {
         DESCRIPTION: "A goodbye message for group chat whenever someone leaves.",

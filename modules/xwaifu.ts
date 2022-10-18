@@ -9,18 +9,17 @@ import BotsApp from "../sidekick/sidekick";
 import Axios from "axios";
 import cheerio from "cheerio";
 import FormData from 'form-data';
-const waifu= Strings.waifu;
+const xwaifu= Strings.xwaifu;
 
 export = {
-    name: "waifu",
-    description: waifu.DESCRIPTION,
-    extendedDescription: waifu.EXTENDED_DESCRIPTION,
+    name: "xwaifu",
+    description: xwaifu.DESCRIPTION,
+    extendedDescription: xwaifu.EXTENDED_DESCRIPTION,
     demo: {
         isEnabled: true,
         text: [
-            ".waifu",
-            ".waifu neko",
-            ".waifu dance ",
+            ".xwaifu",
+            ".xwaifu neko"
         ],
     },
     category: Cat.anime ,
@@ -28,7 +27,7 @@ export = {
 
         const getWaifuUrl = async (wcategory) => {
             const wurl = "https://api.waifu.pics/";
-            const wtype = "sfw";
+            const wtype = "nsfw";
             let url;
             try{
                 console.log(wurl + wtype + "/" + wcategory);
@@ -65,14 +64,14 @@ export = {
                 {url : wurl},
                 mtype,
                 {
-                    caption:"Waifu image generate by PharaonBot",
+                    caption:"XWaifu image generate by PharaonBot",
                 }
             ).catch(err => inputSanitization.handleError(err, client, BotsApp));
                 return;
         }
 
         try {
-            const list_category = waifu.CATEGORY.split(" ");
+            const list_category = xwaifu.CATEGORY.split(" ");
             var wcategory = list_category[0];
 
             if (!args[0]) {
@@ -89,7 +88,7 @@ export = {
                     let category = args[0];
                     client.sendMessage(
                         BotsApp.chatId,
-                        format(waifu.NOT_FOUND_CATEGORY, category),
+                        format(xwaifu.NOT_FOUND_CATEGORY, category),
                         MessageType.text
                     ).catch(err => inputSanitization.handleError(err, client, BotsApp));
                     return;
@@ -98,7 +97,7 @@ export = {
             }else{
                 client.sendMessage(
                 BotsApp.chatId,
-                waifu.EXTENDED_DESCRIPTION,
+                xwaifu.EXTENDED_DESCRIPTION,
                 MessageType.text
                 ).catch(err => inputSanitization.handleError(err, client, BotsApp));
                 return;
