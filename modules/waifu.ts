@@ -7,6 +7,7 @@ import Client from "../sidekick/client";
 import { proto } from "@adiwajshing/baileys";
 import BotsApp from "../sidekick/sidekick";
 import Axios from "axios";
+import cheerio from "cheerio";
 const waifu= Strings.waifu;
 
 export = {
@@ -44,7 +45,7 @@ export = {
         const send = (url) => {
             client.sendMessage(
                 BotsApp.chatId,
-                {url : url},
+                {url : ((url.includes('.gif')) ? gif2mp4(url) : url)},
                 ((url.includes('.gif')) ? MessageType.gif : MessageType.image),
                 {
                     caption:"Waifu image generate by PharaonBot",
@@ -90,3 +91,37 @@ export = {
         }
     },
 };
+
+async function gif2mp4(gifUrl) {
+    try{
+        let {data} = await Axios({
+            method: 'get',
+            url : "https://ezgif.com/gif-to-mp4?url=" + gifUrl
+        });
+        console.log(data);
+        cont bodyFormThen : any = new FormData();
+        var $ = cheerio.load(data);
+        const file = $('input[name="file"]').attr('value');
+        const convert = $('input[name="file"]').attr('value');
+        const gotdata = {
+            file : file,
+            convert ; convert
+        };
+        bodyFormThen.append('file', gotdata.file);
+        bodyFormThen.append('convert', gotdata.convert);
+        les res = await Axios({
+            method : 'post',
+            url : 'https://ezgif.com/gif-to-mp4/' + gotdata.file,
+            data: bodyFormThen,
+            header : {
+            'content-type' : `multipart/form-data boundary=${bodyFormThen._boundary}`
+            }
+        });
+        $ = cheerio.load(res.data)
+            const result = 'https:' + $('div#output > p.outfile > video > source').attr('src');
+            console.log("result : " + result)
+            return result;
+    } catch (err) {
+        console.log(err);
+    }
+}
