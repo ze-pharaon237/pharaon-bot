@@ -21,6 +21,7 @@ export = {
             var wcategory = list_category[0];
             if (!args[0]) {
                 const url = getWaifuUrl(wcategory);
+                console.log("url = " + url);
                 client.sendMessage(
                     BotsApp.chatId,
                     { url: url },
@@ -33,6 +34,7 @@ export = {
             }else if(args.length == 1){
                 if(list_category.includes(args[0])){
                     const url = getWaifuUrl(args[0]);
+                    console.log("url = " + url);
                     client.sendMessage(
                     BotsApp.chatId,
                     { url: url },
