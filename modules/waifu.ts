@@ -45,7 +45,7 @@ export = {
             client.sendMessage(
                 BotsApp.chatId,
                 {url : url},
-                (url.toUpperCase.includes('.GIF')) ? MessageType.gif : MessageType.image,
+                ((url.includes('.gif')) ? MessageType.gif : MessageType.image),
                 {
                     caption:"Waifu image generate by PharaonBot",
                 }
