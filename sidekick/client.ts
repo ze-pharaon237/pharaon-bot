@@ -68,6 +68,17 @@ class Client {
             // console.log(ops2);
             await this.sock.sendMessage(jid, ops);
             res = await this.sock.sendMessage(jid, ops2);
+
+
+        } else if(type === MessageType.gif) {
+            ops = {
+                video: content,
+                gifPlayback: true
+            }
+            if (options?.caption) {
+                ops.caption = options.caption;
+            }
+            res = await this.sock.sendMessage(jid, ops);
         }
         return res;
     };

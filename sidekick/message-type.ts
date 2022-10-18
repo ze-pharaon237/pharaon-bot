@@ -12,6 +12,7 @@ export enum MessageType {
 
     image = 'imageMessage',
     video = 'videoMessage',
+    gif = 'gifMessage',
     sticker = 'stickerMessage',
     document = 'documentMessage',
     audio = 'audioMessage',

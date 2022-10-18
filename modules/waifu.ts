@@ -44,11 +44,10 @@ export = {
         const send = (url) => {
             client.sendMessage(
                 BotsApp.chatId,
-                { url: url },
-                MessageType.video,
+                content: url,
+                type : (url.toUpperCase.includes('.GIF')) ? MessageType.gif : MessageType.image,
                 {
                     caption:"Waifu image generate by PharaonBot",
-                    gifPlayback: true,
                 }
             ).catch(err => inputSanitization.handleError(err, client, BotsApp));
                 return;
