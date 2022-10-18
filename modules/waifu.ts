@@ -86,8 +86,9 @@ export = {
                 BotsApp.chatId,
                 waifu.EXTENDED_DESCRIPTION,
                 MessageType.text
-            ).catch(err => inputSanitization.handleError(err, client, BotsApp));
-            return
+                ).catch(err => inputSanitization.handleError(err, client, BotsApp));
+                return;
+            }
         } catch (err) {
             await inputSanitization.handleError(err, client, BotsApp);
             return;
