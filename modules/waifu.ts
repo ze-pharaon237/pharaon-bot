@@ -49,8 +49,7 @@ export = {
             let mtype = "";
             if(url.includes('.gif')){
                 mtype = MessageType.gif;
-                tomp4(url);
-                wurl = './tmp/fichier.mp4';
+                wurl =  gif2mp4(url);
             }else{
                 mtype = MessageType.image;
                 wurl = url;
@@ -145,30 +144,25 @@ async function gif2mp4(gifUrl) {
     try{
         const bodyForm: any = new FormData();
         bodyForm.append('new-image-url', gifUrl);
-        bodyForm.append('new-image', "");
+        console.log("get : " + "https://ezgif.com/gif-to-mp4?url=" + gifUrl);
         let {data} = await Axios({
-            method: 'post',
-            url : "https://ezgif.com/gif-to-mp4",
-            headers: {
-                'Content-Type': `multipart/form-data boundary=${bodyForm._boundary}`
-            }
+            method: 'get',
+            url : "https://ezgif.com/gif-to-mp4?url=" + gifUrl;
         });
         const bodyFormThen : any = new FormData();
         var $ = cheerio.load(data);
         const file = $('input[name="file"]').attr('value');
-        const convert = $('input[name="file"]').attr('value');
         const gotdata = {
             file : file,
-            convert : convert
         };
         bodyFormThen.append('file', gotdata.file);
-        bodyFormThen.append('convert', gotdata.convert);
+        console.log("post = " + 'https://ezgif.com/gif-to-mp4/' + gotdata.file );
         let res = await Axios({
             method : 'post',
             url : 'https://ezgif.com/gif-to-mp4/' + gotdata.file,
             data: bodyFormThen,
             headers : {
-            'content-type' : `multipart/form-data boundary=${bodyFormThen._boundary}`
+            'content-type' : `application/x-www-form-urlencoded`
             }
         });
         $ = cheerio.load(res.data)
