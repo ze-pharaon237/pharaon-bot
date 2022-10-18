@@ -15,7 +15,14 @@ export = {
     name: "waifu",
     description: waifu.DESCRIPTION,
     extendedDescription: waifu.EXTENDED_DESCRIPTION,
-    demo: { isEnabled: true },
+    demo: {
+        isEnabled: true,
+        text: [
+            ".waifu",
+            ".waifu neko",
+            ".waifu dance ",
+        ],
+    },
     category: Cat.anime ,
     async handle(client: Client, chat: proto.IWebMessageInfo, BotsApp: BotsApp, args: string[]): Promise<void> {
 
@@ -65,7 +72,7 @@ export = {
         }
 
         try {
-            const list_category = waifu.WAIFU_CATEGORY_SFW.split(" ");
+            const list_category = waifu.CATEGORY.split(" ");
             var wcategory = list_category[0];
 
             if (!args[0]) {
