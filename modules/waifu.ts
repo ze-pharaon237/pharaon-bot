@@ -41,35 +41,33 @@ export = {
             return url;
         }
 
+        const send = (url){
+            client.sendMessage(
+                BotsApp.chatId,
+                { url: url },
+                MessageType.video,
+                {
+                    caption:"Waifu image generate by PharaonBot",
+                    gifPlayback: true,
+                }
+            ).catch(err => inputSanitization.handleError(err, client, BotsApp));
+                return;
+        }
+
         try {
             const list_category = waifu.WAIFU_CATEGORY_SFW.split(" ");
             var wcategory = list_category[0];
 
             if (!args[0]) {
                 let url = await getWaifuUrl(wcategory);
-                console.log("url = " + url );
-                client.sendMessage(
-                    BotsApp.chatId,
-                    { url: url },
-                    MessageType.video,
-                    caption:"Waifu image generate by PharaonBot",
-                    gifPlayback: true,
-                ).catch(err => inputSanitization.handleError(err, client, BotsApp));
-                return;
+                send(url);
 
             }else if(args.length == 1){
 
                 if(list_category.includes(args[0])){
                     let url = await getWaifuUrl(args[0]);
-                    console.log("url = " + url);
-                    client.sendMessage(
-                        BotsApp.chatId,
-                        { url: url },
-                        MessageType.video,
-                        caption:"Waifu image generate by PharaonBot",
-                        gifPlayback: true,
-                    ).catch(err => inputSanitization.handleError(err, client, BotsApp));
-                    return;
+                   send(url);
+
                 }else{
                     client.sendMessage(
                         BotsApp.chatId,
