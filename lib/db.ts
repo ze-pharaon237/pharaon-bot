@@ -424,7 +424,7 @@ const data = {
         WELCOME_UPDATED: "```Welcome message updated and enabled.```",
     },
     xwaifu: {
-      DESCRIPTION: "Get a random picture of a xwaifu (+18)",
+      DESCRIPTION: "Get a random picture of a xwaifu (+18) ",
       EXTENDED_DESCRIPTION:
             "Obtain xwaifu (+18) picture by entering just xwaifu or xwaifu and category. \n\nEx:  \n\t'.xwaifu'\n\t'.xwaifu neko'. \n\nCategory : \n\t ○ waifu \n\t ○ neko \n\t ○ trap \n\t ○ blowjob",
       NOT_FOUND_CATEGORY: "xwaifu category '{category}' not found !\nTyped .help xwaifu to see full category list.",
