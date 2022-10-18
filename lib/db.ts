@@ -387,6 +387,15 @@ const data = {
             "```Sorry, dont have the permissions to do so since I am not an admin.```",
         CHAT_ALL_MEMBERS: "```Chat permissions changed to```  *all group members*.",
     },
+    waifu: {
+      DESCRIPTION: "Get a random picture of a waifu",
+      EXTENDED_DESCRIPTION:
+            "Obtain waifu picture by entering the just waifu or waifu and category. \nEx:  \n\t'waifu'\n\t'waifu kitsune'",
+      NOT_FOUND_CATEGORY: "Waifu category '{category}' not found !",
+      WAIFU_CATEGORY_SFW: "waifu neko shinobu megumin bully cuddle cry hug awoo kiss lick pat smug bonk yeet blush smile wave highfive handhold nom bite glomp slap kill kick happy wink poke dance cringe",
+      WAIFU_CATEGORY_NSFW: "waifu neko trap blowjob",
+      ERROR: "Unknow error, please contact the owner to have a solution !"
+    },
     weather: {
         DESCRIPTION: "Get weather data of a city",
         EXTENDED_DESCRIPTION:

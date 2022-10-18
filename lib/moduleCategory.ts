@@ -6,6 +6,7 @@ export enum ModuleCategory {
     search = 'search',
     download = "download",
     media = "media",
+    anime = "anime"
 }
 
 //import { ModuleCategory as Cat } from "../lib/moduleCategory.ts";
