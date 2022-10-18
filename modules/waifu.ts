@@ -10,6 +10,7 @@ import Axios from "axios";
 import cheerio from "cheerio";
 import ffmpeg from "fluent-ffmpeg";
 import { writeFile } from 'fs/promises';
+import FormData from 'form-data';
 const waifu= Strings.waifu;
 
 export = {
@@ -142,8 +143,6 @@ function tomp4(gifUrl){
 
 async function gif2mp4(gifUrl) {
     try{
-        const bodyForm: any = new FormData();
-        bodyForm.append('new-image-url', gifUrl);
         console.log("get : " + "https://ezgif.com/gif-to-mp4?url=" + gifUrl);
         let {data} = await Axios({
             method: 'get',
