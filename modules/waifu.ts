@@ -54,6 +54,7 @@ export = {
                     {
                         caption:"Waifu image generate by PharaonBot",
                     }
+                    return
                 ).catch(err => inputSanitization.handleError(err, client, BotsApp));
                 return;
             }else if(args.length == 1){
@@ -61,25 +62,33 @@ export = {
                     let url = await getWaifuUrl(args[0]);
                     console.log("url = " + url);
                     client.sendMessage(
-                    BotsApp.chatId,
-                    { url: url },
-                    MessageType.image,
-                    {
-                        caption:"Waifu image generate by PharaonBot",
-                    }
-                ).catch(err => inputSanitization.handleError(err, client, BotsApp));
+                        BotsApp.chatId,
+                        { url: url },
+                        MessageType.image,
+                        {
+                            caption:"Waifu image generate by PharaonBot",
+                        }
+                        return
+                    ).catch(err => inputSanitization.handleError(err, client, BotsApp));
+                }else{
+                    client.sendMessage(
+                        BotsApp.chatId,
+                        format(waifu.NOT_FOUND_CATEGORY, args[0]),
+                        MessageType.text
+                    ).catch(err => inputSanitization.handleError(err, client, BotsApp));
+                    return
                 }
-            }
-            client.sendMessage(
+
+            }else{
+                client.sendMessage(
                 BotsApp.chatId,
                 waifu.EXTENDED_DESCRIPTION,
                 MessageType.text
             ).catch(err => inputSanitization.handleError(err, client, BotsApp));
             return
-
-        } catch (err) {
-            await inputSanitization.handleError(err, client, BotsApp);
-        }
+            }  catch (err) {
+                await inputSanitization.handleError(err, client, BotsApp);
+            }
     },
 };
 
