@@ -54,7 +54,8 @@ export = {
                     MessageType.image,
                     {
                         caption:"Waifu image generate by PharaonBot",
-                    }
+                    },
+                    gifPlayback: true,
                 ).catch(err => inputSanitization.handleError(err, client, BotsApp));
                 return;
 
@@ -69,7 +70,8 @@ export = {
                         MessageType.image,
                         {
                             caption:"Waifu image generate by PharaonBot",
-                        }
+                        },
+                        gifPlayback: true,
                     ).catch(err => inputSanitization.handleError(err, client, BotsApp));
                     return;
                 }else{
