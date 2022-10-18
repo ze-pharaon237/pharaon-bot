@@ -51,10 +51,8 @@ export = {
                 client.sendMessage(
                     BotsApp.chatId,
                     { url: url },
-                    MessageType.image,
-                    {
-                        caption:"Waifu image generate by PharaonBot",
-                    },
+                    MessageType.video,
+                    caption:"Waifu image generate by PharaonBot",
                     gifPlayback: true,
                 ).catch(err => inputSanitization.handleError(err, client, BotsApp));
                 return;
@@ -67,10 +65,8 @@ export = {
                     client.sendMessage(
                         BotsApp.chatId,
                         { url: url },
-                        MessageType.image,
-                        {
-                            caption:"Waifu image generate by PharaonBot",
-                        },
+                        MessageType.video,
+                        caption:"Waifu image generate by PharaonBot",
                         gifPlayback: true,
                     ).catch(err => inputSanitization.handleError(err, client, BotsApp));
                     return;
