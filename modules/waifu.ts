@@ -42,7 +42,7 @@ export = {
             return url;
         }
 
-        const send = (url) => {
+        const send = asynnc (url) => {
             let wurl = "";
             let mtype = "";
             if(url.includes('.gif')){
