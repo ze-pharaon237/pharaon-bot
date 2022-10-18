@@ -91,24 +91,5 @@ export = {
             }
         }catch (err) {
             await inputSanitization.handleError(err, client, BotsApp);
-        };
+        },
 };
-
-async function getWaifuUrl(wcategory){
-    const url = "https://api.waifu.pics/";
-    const wtype = "sfw";
-    try{
-        console.log(url + wtype + "/" + wcategory);
-        await Axios.get(url + wtype + "/" + wcategory)
-        .then((res) => {
-            console.log(res.data);
-            console.log(res.data.url);
-            return res.data.url;
-        })
-        .catch((error) => {
-            console.log("axios error : " + error);
-        });
-    } catch (err) {
-        console.log(err);
-    }
-}
