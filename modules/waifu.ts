@@ -88,8 +88,9 @@ export = {
                 MessageType.text
             ).catch(err => inputSanitization.handleError(err, client, BotsApp));
             return
-            }
-        }catch (err) {
+        } catch (err) {
             await inputSanitization.handleError(err, client, BotsApp);
-        },
+            return;
+        }
+    },
 };
