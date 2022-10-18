@@ -44,12 +44,12 @@ export = {
             return url;
         }
 
-        const send = (url) => {
+        const send = async (url) => {
             let wurl = "";
             let mtype = "";
             if(url.includes('.gif')){
                 mtype = MessageType.gif;
-                wurl =  gif2mp4(url);
+                wurl =  await gif2mp4(url);
             }else{
                 mtype = MessageType.image;
                 wurl = url;
