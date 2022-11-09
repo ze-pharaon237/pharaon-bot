@@ -6,6 +6,8 @@ COPY ./ ./
 
 RUN apt-get update
 
+RUN apt -y install ffmpeg
+
 RUN npm install
 
 RUN rm -rf node_modules
