@@ -1,5 +1,9 @@
 FROM node:lts-buster
 
+WORKDIR /usr/app
+
+COPY ./ ./
+
 RUN apt-get update
 
 RUN npm install
