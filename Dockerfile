@@ -4,7 +4,7 @@ WORKDIR /usr/app
 
 COPY ./ ./
 
-RUN apt-get update
+RUN apt update
 
 RUN apt -y install ffmpeg
 
