@@ -33,7 +33,7 @@ const ERROR_TEMPLATE = db_1.default.general.ERROR_TEMPLATE;
 const getCleanedContact = (args, client, BotsApp) => __awaiter(void 0, void 0, void 0, function* () {
     var jidNumber = '';
     var countryCode = config_1.default.COUNTRY_CODE;
-    if (parseInt(args[0]) === NaN || args[0][0] === "+" || args[0][0] === "@") {
+    if (isNaN(+args[0]) || args[0][0] === "+" || args[0][0] === "@") {
         if (args[0][0] === "@" || args[0][0] === "+") {
             jidNumber = args[0].substring(1, args[0].length + 1);
         }
@@ -107,19 +107,26 @@ const handleError = (err, client, BotsApp, customMessage = "```Something went wr
     client.sendMessage(BotsApp.chatId, customMessage, message_type_1.MessageType.text);
     client.sendMessage(BotsApp.logGroup, (0, string_format_1.default)(ERROR_TEMPLATE, data), message_type_1.MessageType.text);
 });
-const saveBuffer = (fileName, stream) => { var stream_1, stream_1_1; return __awaiter(void 0, void 0, void 0, function* () {
-    var e_1, _a;
+const saveBuffer = (fileName, stream) => { var _a, stream_1, stream_1_1; return __awaiter(void 0, void 0, void 0, function* () {
+    var _b, e_1, _c, _d;
     let buffer = Buffer.from([]);
     try {
-        for (stream_1 = __asyncValues(stream); stream_1_1 = yield stream_1.next(), !stream_1_1.done;) {
-            const chunk = stream_1_1.value;
-            buffer = Buffer.concat([buffer, chunk]);
+        for (_a = true, stream_1 = __asyncValues(stream); stream_1_1 = yield stream_1.next(), _b = stream_1_1.done, !_b;) {
+            _d = stream_1_1.value;
+            _a = false;
+            try {
+                const chunk = _d;
+                buffer = Buffer.concat([buffer, chunk]);
+            }
+            finally {
+                _a = true;
+            }
         }
     }
     catch (e_1_1) { e_1 = { error: e_1_1 }; }
     finally {
         try {
-            if (stream_1_1 && !stream_1_1.done && (_a = stream_1.return)) yield _a.call(stream_1);
+            if (!_a && !_b && (_c = stream_1.return)) yield _c.call(stream_1);
         }
         finally { if (e_1) throw e_1.error; }
     }

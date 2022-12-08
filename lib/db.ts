@@ -387,6 +387,16 @@ const data = {
             "```Sorry, dont have the permissions to do so since I am not an admin.```",
         CHAT_ALL_MEMBERS: "```Chat permissions changed to```  *all group members*.",
     },
+    vote: {
+        DESCRIPTION : "organise a vote",
+        EXTENDED_DESCRIPTION: "organise a vote , extended description",
+        FILE: "./tmp/vote.json",
+        CREATE: "create",
+        CHOOSE: "choose",
+        LIST: "list",
+        SHOW: "show",
+        RESULT : "result",
+    },
     waifu: {
       DESCRIPTION: "Get a random picture of a waifu",
       EXTENDED_DESCRIPTION:

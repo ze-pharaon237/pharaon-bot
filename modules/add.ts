@@ -45,7 +45,7 @@ module.exports = {
                 return;
             }
             let number;
-            if (parseInt(args[0]) === NaN || args[0][0] === "+" || args[0].length < 10) {
+            if (isNaN(+args[0])|| args[0][0] === "+" || args[0].length < 10) {
                 client.sendMessage(
                     BotsApp.chatId,
                     ADD.NUMBER_SYNTAX_ERROR,
@@ -53,7 +53,7 @@ module.exports = {
                 ).catch(err => inputSanitization.handleError(err, client, BotsApp));
                 return;
             }
-            if (args[0].length == 10 && !(parseInt(args[0]) === NaN)) {
+            if (args[0].length == 10 && !(isNaN(+args[0]))) {
                 number = CONFIG.COUNTRY_CODE + args[0];
             } else {
                 number = args[0];

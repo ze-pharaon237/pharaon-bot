@@ -37,6 +37,7 @@ export = {
             if(args.length == 2){
                 var member1 = args[0].substring(1);
                 var member2 = args[1].substring(1);
+                
                 var isMember1 = await inputSanitization.isMember(
                     member1,
                     BotsApp.groupMembers

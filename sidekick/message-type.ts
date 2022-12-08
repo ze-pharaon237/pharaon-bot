@@ -7,6 +7,7 @@ export enum MessageType {
     groupInviteMessage = 'groupInviteMessage',
     listMessage = 'listMessage',
     buttonsMessage = 'buttonsMessage',
+    templateButtons = 'templateButtons',
     location = 'locationMessage',
     liveLocation = 'liveLocationMessage',
 

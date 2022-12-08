@@ -10,15 +10,15 @@
     "author": "Prince Mendiratta",
     "license": "ISC",
     "dependencies": {
-        "@adiwajshing/baileys": "^4.4.0",
-        "@adiwajshing/keyed-db": "^0.2.4",
-        "@nuintun/qrcode": "^3.0.1",
+        "@adiwajshing/baileys": "*",
+        "@adiwajshing/keyed-db": "*",
+        "@nuintun/qrcode": "*",
         "@vitalets/google-translate-api": "^7.0.0",
-        "axios": "^0.27.2",
+        "axios": "*",
         "chalk": "^4.1.1",
         "cheerio": "^1.0.0-rc.11",
-        "dotenv": "^10.0.0",
-        "fluent-ffmpeg": "^2.1.2",
+        "dotenv": "*",
+        "fluent-ffmpeg": "*",
         "form-data": "^4.0.0",
         "google-dictionary-api": "^1.0.8",
         "google-search-results-nodejs": "^2.0.1",
@@ -43,9 +43,9 @@
         "ytdl-core": "^4.11.2"
     },
     "devDependencies": {
-        "@types/node": "^17.0.32",
-        "@types/string-format": "^2.0.0",
-        "@types/urban-dictionary": "^3.0.0",
-        "@types/ws": "^8.5.3"
+        "@types/node": "*",
+        "@types/string-format": "*",
+        "@types/urban-dictionary": "*",
+        "@types/ws": "*"
     }
 }

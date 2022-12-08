@@ -45,6 +45,14 @@ class Client {
                 mimetype: 'audio/mp3'
             });
         } else if (type === MessageType.buttonsMessage) {
+            if (options?.contextInfo?.mentionedJid) {
+                content.mentions = options.contextInfo.mentionedJid
+            }
+            res = await this.sock.sendMessage(jid, content);
+        } else if (type === MessageType.templateButtons) {
+            if (options?.contextInfo?.mentionedJid) {
+                content.mentions = options.contextInfo.mentionedJid
+            }
             res = await this.sock.sendMessage(jid, content);
         } else if (type == MessageType.video) {
             ops = {

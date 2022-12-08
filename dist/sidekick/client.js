@@ -15,7 +15,7 @@ class Client {
         this.store = store;
     }
     sendMessage(jid, content, type, options) {
-        var _a;
+        var _a, _b, _c;
         return __awaiter(this, void 0, void 0, function* () {
             let res;
             let ops;
@@ -55,6 +55,15 @@ class Client {
                 });
             }
             else if (type === message_type_1.MessageType.buttonsMessage) {
+                if ((_b = options === null || options === void 0 ? void 0 : options.contextInfo) === null || _b === void 0 ? void 0 : _b.mentionedJid) {
+                    content.mentions = options.contextInfo.mentionedJid;
+                }
+                res = yield this.sock.sendMessage(jid, content);
+            }
+            else if (type === message_type_1.MessageType.templateButtons) {
+                if ((_c = options === null || options === void 0 ? void 0 : options.contextInfo) === null || _c === void 0 ? void 0 : _c.mentionedJid) {
+                    content.mentions = options.contextInfo.mentionedJid;
+                }
                 res = yield this.sock.sendMessage(jid, content);
             }
             else if (type == message_type_1.MessageType.video) {
@@ -80,6 +89,16 @@ class Client {
                 // console.log(ops2);
                 yield this.sock.sendMessage(jid, ops);
                 res = yield this.sock.sendMessage(jid, ops2);
+            }
+            else if (type === message_type_1.MessageType.gif) {
+                ops = {
+                    video: content,
+                    gifPlayback: true
+                };
+                if (options === null || options === void 0 ? void 0 : options.caption) {
+                    ops.caption = options.caption;
+                }
+                res = yield this.sock.sendMessage(jid, ops);
             }
             return res;
         });

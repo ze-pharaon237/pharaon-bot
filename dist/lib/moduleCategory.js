@@ -10,6 +10,7 @@ var ModuleCategory;
     ModuleCategory["search"] = "search";
     ModuleCategory["download"] = "download";
     ModuleCategory["media"] = "media";
+    ModuleCategory["anime"] = "anime";
 })(ModuleCategory = exports.ModuleCategory || (exports.ModuleCategory = {}));
 //import { ModuleCategory as Cat } from "../lib/moduleCategory.ts";
 //category: Cat. ,

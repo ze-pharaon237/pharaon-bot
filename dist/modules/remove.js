@@ -71,7 +71,7 @@ module.exports = {
                 }
                 if (args[0][0] == "@") {
                     const number = args[0].substring(1);
-                    if (parseInt(args[0]) === NaN) {
+                    if (isNaN(+args[0])) {
                         client.sendMessage(BotsApp.chatId, db_js_1.default.remove.INPUT_ERROR, message_type_1.MessageType.text).catch(err => input_sanitization_1.default.handleError(err, client, BotsApp));
                         return;
                     }

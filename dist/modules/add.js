@@ -42,11 +42,11 @@ module.exports = {
                     return;
                 }
                 let number;
-                if (parseInt(args[0]) === NaN || args[0][0] === "+" || args[0].length < 10) {
+                if (isNaN(+args[0]) || args[0][0] === "+" || args[0].length < 10) {
                     client.sendMessage(BotsApp.chatId, ADD.NUMBER_SYNTAX_ERROR, message_type_1.MessageType.text).catch(err => input_sanitization_1.default.handleError(err, client, BotsApp));
                     return;
                 }
-                if (args[0].length == 10 && !(parseInt(args[0]) === NaN)) {
+                if (args[0].length == 10 && !(isNaN(+args[0]))) {
                     number = config_1.default.COUNTRY_CODE + args[0];
                 }
                 else {
