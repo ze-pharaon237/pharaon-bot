@@ -12,8 +12,6 @@ RUN npm install -g typescript
 
 RUN npm install
 
-RUN rm -rf node_modules
-
 RUN rm -rf session.data.json
 
 RUN rm -rf BotsApp.db
